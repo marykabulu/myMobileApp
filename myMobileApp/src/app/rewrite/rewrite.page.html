@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Say It Better</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- User input -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Your Message</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-textarea
+        [(ngModel)]="originalMessage"
+        placeholder="Type the message you want rewritten..."
+        auto-grow="true">
+      </ion-textarea>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Tone selection -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Select Tone</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-select
+        [(ngModel)]="selectedTone"
+        placeholder="Choose a tone">
+        <ion-select-option value="polite">Polite</ion-select-option>
+        <ion-select-option value="professional">Professional</ion-select-option>
+        <ion-select-option value="romantic">Romantic</ion-select-option>
+        <ion-select-option value="firm">Firm</ion-select-option>
+        <ion-select-option value="apology">Apology</ion-select-option>
+      </ion-select>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Action button -->
+  <ion-button expand="block" (click)="rewriteMessage()" [disabled]="isLoading">
+    <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+    <span *ngIf="!isLoading">Rewrite Message</span>
+    <span *ngIf="isLoading">Processing...</span>
+  </ion-button>
+
+  <!-- Output -->
+  <ion-card *ngIf="rewrittenMessage">
+    <ion-card-header>
+      <ion-card-title>Rewritten Message</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ rewrittenMessage }}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
