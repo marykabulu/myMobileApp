@@ -1,5 +1,7 @@
 # Say It Better - AI Message Rewriter
 
+> Deployed via GitHub Pages
+
 A mobile and web application that helps users rewrite their messages in different tones using AI-powered text generation. Built with Ionic, Angular, and AWS Bedrock (Claude AI).
 
 ## 🌟 Features
