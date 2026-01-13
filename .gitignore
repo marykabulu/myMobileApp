@@ -12,6 +12,14 @@ dist/
 build/
 *.zip
 
+# Android build artifacts
+*.aab
+*.apk
+**/android/app/release/
+**/android/app/debug/
+**/android/build/
+**/android/.gradle/
+
 # Environment files
 .env
 .env.local
